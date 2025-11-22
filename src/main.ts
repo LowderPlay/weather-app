@@ -21,6 +21,15 @@ import {
 import leaflet, {Marker} from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
+// https://cescobaz.com/2023/06/14/setup-leaflet-with-svelte-and-vite/
+import markerIconUrl from "../node_modules/leaflet/dist/images/marker-icon.png";
+import markerIconRetinaUrl from "../node_modules/leaflet/dist/images/marker-icon-2x.png";
+import markerShadowUrl from "../node_modules/leaflet/dist/images/marker-shadow.png";
+leaflet.Icon.Default.prototype.options.iconUrl = markerIconUrl;
+leaflet.Icon.Default.prototype.options.iconRetinaUrl = markerIconRetinaUrl;
+leaflet.Icon.Default.prototype.options.shadowUrl = markerShadowUrl;
+leaflet.Icon.Default.imagePath = "";
+
 const icons = {
   AlertTriangle,
   PlusSquare,
