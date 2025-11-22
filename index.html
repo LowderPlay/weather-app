@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>weather-app</title>
+    <script type="module" src="/src/main.ts"></script>
+</head>
+
+<body class="bg-zinc-950 min-h-screen p-6 text-zinc-400 selection:bg-zinc-800 selection:text-white">
+<header class="max-w-7xl mx-auto mb-10 border-b border-zinc-800 py-6 flex justify-between items-end">
+    <div class="flex gap-2 items-center">
+        <h1 class="text-3xl font-bold text-zinc-100 tracking-tighter uppercase">
+            Погода
+        </h1>
+        <i data-lucide="cloud" class="inline-block size-8 text-white"></i>
+    </div>
+    <p>
+        by <a href="https://lowderplay.dev">lowderplay</a>
+    </p>
+</header>
+
+<section class="max-w-7xl mx-auto bg-zinc-900/50 border border-zinc-800 p-6 mb-12">
+    <h3 class="text-sm font-bold text-zinc-500 uppercase mb-4 border-l-2 border-emerald-500 pl-2">
+        Создать виджет
+    </h3>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1 space-y-6">
+            <div class="group">
+                <label for="cityInput" class="block text-xs font-bold uppercase text-zinc-600 mb-2 group-focus-within:text-emerald-500 transition-colors">
+                    Местоположение
+                </label>
+                <div class="relative">
+                    <input type="text" id="cityInput"
+                           class="w-full bg-zinc-950 border border-zinc-800 text-zinc-300 p-3 pl-10 focus:border-emerald-500 focus:outline-none transition-colors placeholder-zinc-800"
+                           placeholder="Укажите город...">
+                    <i data-lucide="search" class="absolute left-3 top-4 w-4 h-4 text-zinc-700"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="h-px bg-zinc-800 flex-1"></div>
+                <span class="text-xs text-zinc-700 uppercase">или используйте карту</span>
+                <div class="h-px bg-zinc-800 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="group">
+                    <label for="latInput" class="block text-xs font-bold uppercase text-zinc-600 mb-2 group-focus-within:text-emerald-500 transition-colors">Широта</label>
+                    <input type="number" id="latInput" step="any"
+                           class="w-full bg-zinc-950 border border-zinc-800 text-zinc-500 p-3 focus:border-emerald-500 focus:outline-none transition-colors"
+                           placeholder="00.00">
+                </div>
+                <div class="group">
+                    <label for="lonInput" class="block text-xs font-bold uppercase text-zinc-600 mb-2 group-focus-within:text-emerald-500 transition-colors">Долгота</label>
+                    <input type="number" id="lonInput" step="any"
+                           class="w-full bg-zinc-950 border border-zinc-800 text-zinc-500 p-3 focus:border-emerald-500 focus:outline-none transition-colors"
+                           placeholder="00.00">
+                </div>
+            </div>
+
+            <button id="addBtn"
+                    class="w-full bg-zinc-100 text-zinc-950 hover:bg-emerald-500 hover:text-white font-bold uppercase py-3 px-6 border border-transparent transition-all duration-200 flex justify-center items-center gap-2">
+                <i data-lucide="plus-square" class="w-4 h-4"></i>
+                Создать виджет
+            </button>
+
+            <p id="errorMsg" class="text-red-500 text-xs font-bold mt-2 hidden flex items-center gap-2">
+                <i data-lucide="alert-triangle" class="w-3 h-3"></i>
+                <span id="errorText">Ошибка</span>
+            </p>
+        </div>
+
+        <div class="flex-1">
+            <label class="block text-xs font-bold uppercase text-zinc-600 mb-2">
+                Карта
+            </label>
+            <div id="mapSelect"
+                 class="w-full h-64 bg-zinc-950 border border-zinc-800 grayscale opacity-80 hover:opacity-100 transition-opacity relative z-0"></div>
+            <p class="text-[10px] text-zinc-600 mt-1">* Нажмите на карту, чтобы установить координаты</p>
+        </div>
+    </div>
+</section>
+
+<main id="widgetsContainer" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Сюда будут вставляться виджеты  -->
+</main>
+</body>
+</html>

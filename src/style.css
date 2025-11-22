@@ -1,0 +1,30 @@
+@import "tailwindcss";
+body { font-family: 'Roboto', sans-serif; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #09090b; }
+::-webkit-scrollbar-thumb { background: #27272a; }
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+@theme {
+    --animate-shake: shake 0.5s ease-out;
+    @keyframes shake {
+        10%,
+        90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+        20%,
+        80% {
+            transform: translate3d(2px, 0, 0);
+        }
+        30%,
+        50%,
+        70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+        40%,
+        60% {
+            transform: translate3d(4px, 0, 0);
+        }
+    }
+}
