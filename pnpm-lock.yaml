@@ -20,10 +20,6 @@ importers:
       tailwindcss:
         specifier: ^4.1.17
         version: 4.1.17
-    optionalDependencies:
-      '@rollup/rollup-linux-x64-gnu':
-        specifier: 4.9.5
-        version: 4.9.5
     devDependencies:
       '@types/leaflet':
         specifier: ^1.9.21
@@ -157,11 +153,6 @@ packages:
 
   '@rolldown/pluginutils@1.0.0-beta.50':
     resolution: {integrity: sha512-5e76wQiQVeL1ICOZVUg4LSOVYg9jyhGCin+icYozhsUzM+fHE7kddi1bdiE0jwVqTfkjba3jUFbEkoC9WkdvyA==}
-
-  '@rollup/rollup-linux-x64-gnu@4.9.5':
-    resolution: {integrity: sha512-Dq1bqBdLaZ1Gb/l2e5/+o3B18+8TI9ANlA1SkejZqDgdU/jK/ThYaMPMJpVMMXy2uRHvGKbkz9vheVGdq3cJfA==}
-    cpu: [x64]
-    os: [linux]
 
   '@tailwindcss/node@4.1.17':
     resolution: {integrity: sha512-csIkHIgLb3JisEFQ0vxr2Y57GUNYh447C8xzwj89U/8fdW8LhProdxvnVH6U8M2Y73QKiTIH+LWbK3V2BBZsAg==}
@@ -547,9 +538,6 @@ snapshots:
     optional: true
 
   '@rolldown/pluginutils@1.0.0-beta.50': {}
-
-  '@rollup/rollup-linux-x64-gnu@4.9.5':
-    optional: true
 
   '@tailwindcss/node@4.1.17':
     dependencies:
